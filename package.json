@@ -12,6 +12,7 @@
     },
     "keywords": [
         "CPF",
+        "CNPJ",
         "validator",
         "generator",
         "formatter"
