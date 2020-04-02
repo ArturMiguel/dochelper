@@ -1,0 +1,29 @@
+{
+    "name": "doc-helper",
+    "version": "1.0.0",
+    "description": "Biblioteca para validar, gerar ou formatar documentos brasileiros.",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ArturMiguel/doc-helper.git"
+    },
+    "keywords": [
+        "CPF",
+        "validator",
+        "generator",
+        "formatter"
+    ],
+    "author": "Artur Miguel",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ArturMiguel/doc-helper/issues"
+    },
+    "homepage": "https://github.com/ArturMiguel/doc-helper#readme",
+    "devDependencies": {
+        "jest": "^25.2.4"
+    },
+    "dependencies": {}
+}
