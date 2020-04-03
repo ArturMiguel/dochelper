@@ -20,7 +20,7 @@ describe('CNPJ', () => {
         expect(cnpj.validate(cnpj.generate())).toBeTruthy()
         expect(cnpj.validate(cnpj.generate())).toBeTruthy()
     })
-    test('formata entradas válidas e inválidas', () => {
+    test('formata entradas', () => {
         expect(cnpj.format()).toBe(undefined)
         expect(cnpj.format('00000000a00000')).toBe(undefined)
         expect(cnpj.format(71110306059)).toBe(undefined)
