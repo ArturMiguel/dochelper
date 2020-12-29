@@ -1,6 +1,6 @@
 export interface IDocument {
   generate(formatted?: boolean): string;
-  validate(CNPJ: string): boolean;
-  format(CPF: string): string;
-  unformat(CNPJ: string): string;
+  validate(text: string): boolean;
+  format(text: string): string;
+  unformat(text: string): string;
 }
