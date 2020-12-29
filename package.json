@@ -1,30 +1,34 @@
 {
-    "name": "doc-helper",
-    "version": "1.0.0",
-    "description": "Biblioteca para validar, gerar ou formatar documentos brasileiros.",
-    "main": "index.js",
-    "scripts": {
-        "test": "jest"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ArturMiguel/doc-helper.git"
-    },
-    "keywords": [
-        "CPF",
-        "CNPJ",
-        "validator",
-        "generator",
-        "formatter"
-    ],
-    "author": "Artur Miguel",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ArturMiguel/doc-helper/issues"
-    },
-    "homepage": "https://github.com/ArturMiguel/doc-helper#readme",
-    "devDependencies": {
-        "jest": "^25.2.4"
-    },
-    "dependencies": {}
+  "name": "doc-helper",
+  "version": "1.0.0",
+  "description": "Biblioteca para validar, gerar e formatar CPF e CNPJ.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rm -rf dist && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArturMiguel/doc-helper.git"
+  },
+  "keywords": [
+    "CPF",
+    "CNPJ",
+    "gerador",
+    "validador",
+    "formatador"
+  ],
+  "author": "https://github.com/ArturMiguel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArturMiguel/doc-helper/issues"
+  },
+  "homepage": "https://github.com/ArturMiguel/doc-helper#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.19",
+    "jest": "^25.5.4",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {}
 }
