@@ -1,7 +1,2 @@
-import CNPJ from './CNPJ';
-import CPF from './CPF';
-
-export = {
-  CPF,
-  CNPJ
-}
+export { default as CPF } from './CPF';
+export { default as CNPJ } from './CNPJ';

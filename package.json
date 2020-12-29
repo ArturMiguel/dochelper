@@ -1,6 +1,6 @@
 {
   "name": "dochelper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Biblioteca para validar, gerar e formatar CPF e CNPJ.",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/ArturMiguel/doc-helper.git"
   },
+  "types": "./index.d.ts",
   "keywords": [
     "CPF",
     "CNPJ",
