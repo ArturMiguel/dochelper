@@ -1,11 +1,12 @@
 {
-  "name": "doc-helper",
-  "version": "1.0.0",
+  "name": "dochelper",
+  "version": "1.0.1",
   "description": "Biblioteca para validar, gerar e formatar CPF e CNPJ.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "rm -rf dist && tsc"
+    "build": "rm -rf dist && tsc && cp {package.json,README.md,LICENSE} dist",
+    "publish": "npm publish dist"
   },
   "repository": {
     "type": "git",

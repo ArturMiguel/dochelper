@@ -1,7 +1,9 @@
+import { IDocument } from './IDocument';
+
 const formattedCPFRegex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}/;
 const unFormattedCPFRegex = /^(\d{3})(\d{3})(\d{3})(\d{2})/;
 
-export default {
+class CPFDocument implements IDocument {
   generate(formatted?: boolean): string {
     let CPF = '';
     for (let i = 0; i < 9; i++) {
@@ -10,7 +12,7 @@ export default {
 
     CPF += calcDigits(CPF);
     return formatted ? this.format(CPF) : CPF;
-  },
+  }
 
   validate(CPF: string): boolean {
     let _CPF = this.format(CPF);
@@ -21,7 +23,7 @@ export default {
       return calcDigits(_CPF) === `${_CPF[9]}${_CPF[10]}`;
     }
     return false;
-  },
+  }
 
   format(CPF: string): string {
     if (unFormattedCPFRegex.test(CPF)) {
@@ -30,7 +32,7 @@ export default {
       return CPF;
     }
     return null;
-  },
+  }
 
   unformat(CPF: string): string {
     if (unFormattedCPFRegex.test(CPF)) {
@@ -67,3 +69,5 @@ function calcDigits(CPF: string): string {
 
   return `${digit1}${digit2}`;
 }
+
+export = new CPFDocument();

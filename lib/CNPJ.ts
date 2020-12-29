@@ -1,7 +1,9 @@
+import { IDocument } from './IDocument';
+
 const formattedCNPJRegex = /^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}/;
 const unFormattedCNPJRegex = /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/;
 
-export default {
+class CNPJDocument implements IDocument {
   generate(formatted?: boolean): string {
     let CNPJ = '';
     for (let i = 0; i < 12; i++) {
@@ -10,7 +12,7 @@ export default {
 
     CNPJ += calcDigits(CNPJ);
     return formatted ? this.format(CNPJ) : CNPJ;
-  },
+  }
 
   validate(CNPJ: string): boolean {
     let _CNPJ = this.format(CNPJ);
@@ -21,7 +23,7 @@ export default {
       return calcDigits(_CNPJ) === `${_CNPJ[12]}${_CNPJ[13]}`;
     }
     return false;
-  },
+  }
 
   format(CNPJ: string): string {
     if (unFormattedCNPJRegex.test(CNPJ)) {
@@ -30,7 +32,7 @@ export default {
       return CNPJ;
     }
     return null;
-  },
+  }
 
   unformat(CNPJ: string): string {
     if (unFormattedCNPJRegex.test(CNPJ)) {
@@ -72,3 +74,5 @@ function calcDigits(CNPJ: string): string {
 
   return `${digit1}${digit2}`;
 }
+
+export = new CNPJDocument();
