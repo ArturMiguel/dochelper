@@ -7,7 +7,7 @@
   <a href='https://github.com/ArturMiguel/dochelper'>
     <img src='https://img.shields.io/npm/l/dochelper'>
   </a>
-  <a href='https://www.npmjs.com/package/dochelpe'>
+  <a href='https://www.npmjs.com/package/dochelper'>
     <img src='https://img.shields.io/npm/dt/dochelper'>
   </a>
 
