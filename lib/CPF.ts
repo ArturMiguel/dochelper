@@ -20,6 +20,9 @@ class CPF implements IDocument {
       if (formattedCPFRegex.test(_CPF)) {
         _CPF = CPF.replace(/[^\d]/g, '');
       }
+      if (verifyIfAllDigitsIsEquals(_CPF)) {
+        return false
+      }
       return calcDigits(_CPF) === `${_CPF[9]}${_CPF[10]}`;
     }
     return false;
@@ -44,6 +47,11 @@ class CPF implements IDocument {
   }
 }
 
+function verifyIfAllDigitsIsEquals(CPF: string): boolean {
+  return CPF.split('').every((char: string, index: number, array: string[]) => {
+    return char === array[0]
+  })
+}
 // Cálculo baseado no algoritmo módulo 11
 function calcDigits(CPF: string): string {
   let digit1 = 0;

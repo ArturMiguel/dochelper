@@ -9,6 +9,10 @@ describe('CPF', () => {
     expect(CPF.validate('111.444.777-33')).toBeFalsy();
   });
 
+  test('Valida CPF inválido quanto todos números estão iguais', () => {
+    expect(CPF.validate('111.111.111-11')).toBeFalsy();
+  })
+
   test('Gera CPF valido', () => {
     expect(CPF.validate(CPF.generate())).toBeTruthy();
   });
