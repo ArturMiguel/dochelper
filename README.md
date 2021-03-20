@@ -7,6 +7,9 @@
   <a href='https://github.com/ArturMiguel/dochelper'>
     <img src='https://img.shields.io/npm/l/dochelper'>
   </a>
+  <a href='https://www.npmjs.com/package/dochelpe'>
+    <img src='https://img.shields.io/npm/dt/dochelper'>
+  </a>
 
   <h3>
     Biblioteca para validar, gerar e formatar CPF e CNPJ.
