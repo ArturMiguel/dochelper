@@ -1,9 +1,9 @@
 <div align="center">
   <h1>dochelper</h1>
-  <p>Bibilioteca para validar, gerar e formatar CPF/CNPJ.</p>
+  <p>Biblioteca para validar, gerar e formatar CPF, CNPJ e outras identificações.</p>
   
-  [![npm version](https://img.shields.io/npm/v/dochelper)](ttps://www.npmjs.com/package/dochelper)
-  [![npm downloads](https://img.shields.io/npm/dt/dochelper)](ttps://www.npmjs.com/package/dochelper)
+  [![npm version](https://img.shields.io/npm/v/dochelper)](https://www.npmjs.com/package/dochelper)
+  [![npm downloads](https://img.shields.io/npm/dt/dochelper)](https://www.npmjs.com/package/dochelper)
   [![license](https://img.shields.io/npm/l/dochelper)](./LICENSE)
 </div>
 

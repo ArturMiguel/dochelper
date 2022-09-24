@@ -28,4 +28,8 @@ describe("CPF", () => {
   test("Retira a pontuação de CPF formatado", () => {
     expect(CPF.unformat("111.444.777-35")).toBe("11144477735");
   });
+
+  test("Testa retirada da máscara de uma string fora do formato de CPF", () => {
+    expect(CPF.unformat("111.444.777-356")).toBe(null);
+  })
 });

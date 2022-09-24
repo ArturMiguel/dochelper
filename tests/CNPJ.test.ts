@@ -24,4 +24,8 @@ describe("CNPJ", () => {
   test("Retira a pontuação de CNPJ formatado", () => {
     expect(CNPJ.unformat("11.444.777/0001-61")).toBe("11444777000161");
   });
+
+  test("Testa retirada da máscara de uma string fora do formato de CNPJ", () => {
+    expect(CNPJ.unformat("11.444.777/0001-611")).toBe(null);
+  })
 });

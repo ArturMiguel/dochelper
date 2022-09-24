@@ -1,6 +1,6 @@
 import { IDocument } from "./IDocument";
 
-const formattedCPFRegex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}/;
+const formattedCPFRegex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
 const unFormattedCPFRegex = /^(\d{3})(\d{3})(\d{3})(\d{2})/;
 
 class CPF implements IDocument {
