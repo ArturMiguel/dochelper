@@ -1,11 +1,11 @@
-import { IDocument } from './IDocument';
+import { IDocument } from "./IDocument";
 
 const formattedCNPJRegex = /^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}/;
 const unFormattedCNPJRegex = /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/;
 
 class CNPJ implements IDocument {
   generate(formatted?: boolean): string {
-    let CNPJ = '';
+    let CNPJ = "";
     for (let i = 0; i < 12; i++) {
       CNPJ += Math.floor(Math.random() * 9);
     }
@@ -14,44 +14,44 @@ class CNPJ implements IDocument {
     return formatted ? this.format(CNPJ) : CNPJ;
   }
 
-  validate(CNPJ: string): boolean {
-    let _CNPJ = this.format(CNPJ);
-    if (_CNPJ) {
-      if (formattedCNPJRegex.test(_CNPJ)) {
-        _CNPJ = CNPJ.replace(/[^\d]/g, '');
+  validate(str: string): boolean {
+    let _str = this.format(str);
+    if (_str) {
+      if (formattedCNPJRegex.test(_str)) {
+        _str = str.replace(/[^\d]/g, "");
       }
-      return calcDigits(_CNPJ) === `${_CNPJ[12]}${_CNPJ[13]}`;
+      return calcDigits(_str) === `${_str[12]}${_str[13]}`;
     }
     return false;
   }
 
-  format(CNPJ: string): string {
-    if (unFormattedCNPJRegex.test(CNPJ)) {
-      return CNPJ.replace(unFormattedCNPJRegex, '$1.$2.$3/$4-$5');
-    } else if (formattedCNPJRegex.test(CNPJ)) {
-      return CNPJ;
+  format(str: string): string {
+    if (unFormattedCNPJRegex.test(str)) {
+      return str.replace(unFormattedCNPJRegex, "$1.$2.$3/$4-$5");
+    } else if (formattedCNPJRegex.test(str)) {
+      return str;
     }
     return null;
   }
 
-  unformat(CNPJ: string): string {
-    if (unFormattedCNPJRegex.test(CNPJ)) {
-      return CNPJ;
-    } else if (formattedCNPJRegex.test(CNPJ)) {
-      return CNPJ.replace(/[^0-9]/g, '');
+  unformat(str: string): string {
+    if (unFormattedCNPJRegex.test(str)) {
+      return str;
+    } else if (formattedCNPJRegex.test(str)) {
+      return str.replace(/[^0-9]/g, "");
     }
     return null;
   }
 }
 
 // Cálculo baseado no algoritmo módulo 11
-function calcDigits(CNPJ: string): string {
+function calcDigits(str: string): string {
   let digit1 = 0;
   let digit2 = 0;
   let w = 5;
 
   for (let i = 0; i < 12; i++) {
-    digit1 += parseInt(CNPJ[i]) * w--;
+    digit1 += parseInt(str[i]) * w--;
     if (w === 1) {
       w = 9;
     }
@@ -59,11 +59,11 @@ function calcDigits(CNPJ: string): string {
 
   let rest = digit1 % 11;
   rest < 2 ? digit1 = 0 : digit1 = 11 - rest;
-  CNPJ += digit1;
+  str += digit1;
 
   w = 6;
   for (let i = 0; i < 13; i++) {
-    digit2 += parseInt(CNPJ[i]) * w--;
+    digit2 += parseInt(str[i]) * w--;
     if (w === 1) {
       w = 9;
     }
